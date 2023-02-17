@@ -1,5 +1,0 @@
-name = input('請輸入名字：')
-print('Hi 你好', name)
-hight = input('請問你的身高是：')
-weight = input('請問你的體重是：')
-print('原來你的身體是', hight, ',然後你的體重是', weight)
