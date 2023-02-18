@@ -1,13 +1,17 @@
-import xml
-#  打開同一個檔案
+import os  # 載入一個作業系統
+# 讀取檔案
 products = []
-with open('products.csv', 'r', encoding='utf-8') as f:
-    for line in f:
-        if '商品,價格' in line:
-            continue  # 如果遇到商品,價格這個字串的時候就跳到下一個迴圈
-        name, price = line.strip().split(',')
-        products.append([name, price])  # 把p放入products
-print(products)
+if os.path.isfile('products.csv'):
+    print('yeah，檔案讀取成功')
+    with open('products.csv', 'r', encoding='utf-8') as f:
+        for line in f:
+            if '商品,價格' in line:
+                continue  # 如果遇到商品,價格這個字串的時候就跳到下一個迴圈
+            name, price = line.strip().split(',')
+            products.append([name, price])  # 把p放入products
+    print(products)
+else:
+    print('找不到檔案QQ')
 
 # 讓使用者輸入
 while True:
