@@ -17,5 +17,12 @@ for d in data:
     if len(d) < 100:
         new.append(d)
 print('總共有', len(new), '筆資料小於100個字')
-print(new[0])
-print(new[1])
+
+# good = []
+# for g in data:
+#     if 'good' in g:  #如 if的後面一定都是「是非題」
+#         good.append(g)
+# print('總共有', len(good), '筆資料有提到good這個字')
+
+good = [d for d in data if 'good' in d] # 我在data裡面問有沒有good，如果有good的話就把good加到d清單裡面
+print('總共有', len(good), '筆資料有提到good這個字')
